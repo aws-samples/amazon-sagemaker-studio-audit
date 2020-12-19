@@ -1,15 +1,15 @@
 # Controlling and auditing data exploration activities with Amazon SageMaker Studio and AWS Lake Formation
 
-Highly-regulated industries, such as financial services, are often required to audit all access to their data. This includes auditing exploratory activities performed by data scientists, who usually query data from within machine learning notebooks.
+Highly-regulated industries, such as financial services, are often required to audit all access to their data. This includes auditing exploratory activities performed by data scientists, who usually query data from within machine learning (ML) notebooks.
 
-This blog walks you through the steps to implement access control and auditing capabilities on a per-user basis, using [Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/studio.html) notebooks and [AWS Lake Formation](https://aws.amazon.com/lake-formation/) access control policies. This is a how-to guide based on the [Machine Learning Lens for the AWS Well-Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/wellarchitected-Machine-Learning-Lens.pdf), following the design principles described in the Security Pillar:
+This post walks you through the steps to implement access control and auditing capabilities on a per-user basis, using [Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/studio.html) notebooks and [AWS Lake Formation](https://aws.amazon.com/lake-formation/) access control policies. This is a how-to guide based on the [Machine Learning Lens for the AWS Well-Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/wellarchitected-Machine-Learning-Lens.pdf), following the design principles described in the Security Pillar:
 
 - Restrict access to Machine Learning (ML) systems.
 - Ensure data governance.
 - Enforce data lineage.
 - Enforce regulatory compliance.
 
-Additional ML governance practices for experiments and models, using Amazon SageMaker, are described in the whitepaper [Machine Learning Best Practices in Financial Services](https://d1.awsstatic.com/whitepapers/machine-learning-in-financial-services-on-aws.pdf).
+Additional ML governance practices for experiments and models, using [Amazon SageMaker](https://aws.amazon.com/sagemaker/), are described in the whitepaper [Machine Learning Best Practices in Financial Services](https://d1.awsstatic.com/whitepapers/machine-learning-in-financial-services-on-aws.pdf).
 
 ## Overview of solution
 This implementation uses [Amazon Athena](http://aws.amazon.com/athena) and the [PyAthena](https://pypi.org/project/PyAthena/) client on an Amazon SageMaker Studio notebook to query data on a data lake registered with AWS Lake Formation.
