@@ -1,6 +1,6 @@
-# CDK template for "Control and audit data exploration activities with Amazon SageMaker Studio and AWS Lake Formation"
+# CDK template for "Controlling and auditing data exploration activities with Amazon SageMaker Studio and AWS Lake Formation"
 
-This is the CDK template for "Control and audit data exploration activities with Amazon SageMaker Studio and AWS Lake Formation".
+This is the CDK template for "Controlling and auditing data exploration activities with Amazon SageMaker Studio and AWS Lake Formation".
 
 Note that the stacks are configured as nested stacks with static URL based on the environment variable `NESTED_STACK_URL_PREFIX`. The parent stack is `sagemaker_studio_audit_control/sagemaker_studio_audit_control_stack.py`
 
