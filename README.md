@@ -54,9 +54,9 @@ For this walkthrough, you should have the following prerequisites:
 
 If you prefer to skip the initial setup activities and jump directly to testing and auditing, you can deploy the following [AWS CloudFormation](http://aws.amazon.com/cloudformation) template in a [Region that supports Studio](https://aws.amazon.com/sagemaker/pricing/#Amazon_SageMaker_Pricing_Calculator) and [Lake Formation](https://docs.aws.amazon.com/general/latest/gr/lake-formation.html#lake-formation_region):
 
-[![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://sagemaker-studio-audit-control.s3.amazonaws.com/SageMakerStudioAuditControlStack.yaml&amp;stackName=SageMakerStudioAuditControl)
+[![Launch Stack](https://s3.amazonaws.com/cloudformation-examples/cloudformation-launch-stack.png)](https://console.aws.amazon.com/cloudformation/home#/stacks/create/review?templateURL=https://aws-ml-blog.s3.amazonaws.com/artifacts/sagemaker-studio-audit-control/SageMakerStudioAuditControlStack.yaml&amp;stackName=SageMakerStudioAuditControl)
 
-You can also deploy the template by [downloading the CloudFormation template](https://sagemaker-studio-audit-control.s3.amazonaws.com/SageMakerStudioAuditControlStack.yaml). When deploying the CloudFormation template, you provide the following parameters:
+You can also deploy the template by [downloading the CloudFormation template](https://aws-ml-blog.s3.amazonaws.com/artifacts/sagemaker-studio-audit-control/SageMakerStudioAuditControlStack.yaml). When deploying the CloudFormation template, you provide the following parameters:
 
 - User name and password for a data scientist with full access to the dataset. The default user name is `data-scientist-full`.
 - User name and password for a data scientist with limited access to the dataset. The default user name is `data-scientist-limited`.
