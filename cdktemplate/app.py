@@ -9,7 +9,7 @@ import os
 os.environ["AMAZON_REVIEWS_BUCKET_ARN"] = "arn:aws:s3:::amazon-reviews-pds"
 os.environ["ROLE_NAME_PREFIX"] = "SageMakerStudioExecutionRole_"
 
-os.environ["NESTED_STACK_URL_PREFIX"] = "https://sagemaker-studio-audit-control.s3.amazonaws.com/"
+os.environ["NESTED_STACK_URL_PREFIX"] = "https://aws-ml-blog.s3.amazonaws.com/artifacts/sagemaker-studio-audit-control/"
 
 from sagemaker_studio_audit_control.sagemaker_studio_audit_control_stack import SageMakerStudioAuditControlStack
 from sagemaker_studio_audit_control.amazon_reviews_dataset_stack  import AmazonReviewsDatasetStack
