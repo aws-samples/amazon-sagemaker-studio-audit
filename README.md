@@ -1,6 +1,6 @@
 # Controlling and auditing data exploration activities with Amazon SageMaker Studio and AWS Lake Formation
 
-Highly-regulated industries, such as financial services, are often required to audit all access to their data. This includes auditing exploratory activities performed by data scientists, who usually query data from within machine learning (ML) notebooks.
+Certain industries are required to audit all access to their data. This includes auditing exploratory activities performed by data scientists, who usually query data from within machine learning (ML) notebooks.
 
 This post walks you through the steps to implement access control and auditing capabilities on a per-user basis, using [Amazon SageMaker Studio](https://docs.aws.amazon.com/sagemaker/latest/dg/studio.html) notebooks and [AWS Lake Formation](https://aws.amazon.com/lake-formation/) access control policies. This is a how-to guide based on the [Machine Learning Lens for the AWS Well-Architected Framework](https://d1.awsstatic.com/whitepapers/architecture/wellarchitected-Machine-Learning-Lens.pdf), following the design principles described in the Security Pillar:
 
