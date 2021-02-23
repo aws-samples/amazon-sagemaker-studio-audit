@@ -29,6 +29,12 @@ def create_resource(event, context):
 		user_profile = client.create_user_profile(
 			DomainId = event["ResourceProperties"]["DomainId"],
 			UserProfileName = event["ResourceProperties"]["UserProfileName"],
+			Tags = [
+				{
+					"Key" : "studiouserid",
+					"Value" : event["ResourceProperties"]["StudioUserId"] 
+				}
+			],
 			UserSettings={
 				"ExecutionRole": event["ResourceProperties"]["ExecutionRole"]
 			}
@@ -45,6 +51,12 @@ def update_resource(event, context):
 		user_profile = client.update_user_profile(
 			DomainId = event["ResourceProperties"]["DomainId"],
 			UserProfileName = event["ResourceProperties"]["UserProfileName"],
+			Tags = [
+				{
+					"Key" : "studiouserid",
+					"Value" : event["ResourceProperties"]["StudioUserId"] 
+				}
+			],
 			UserSettings={
 				"ExecutionRole": event["ResourceProperties"]["ExecutionRole"]
 			}
@@ -55,7 +67,7 @@ def update_resource(event, context):
 	except ClientError as e:
 		if e.response['Error']['Code'] == 'ResourceNotFound':
 			print("Resource not found. Creating resource.")
-			return create_user_profile(event, context)
+			return create_resource(event, context)
 		else:
 			print("Unexpected error: %s." % e)
 			cfnresponse.send(event, context, cfnresponse.FAILED, {})
@@ -69,7 +81,7 @@ def delete_resource(event, context):
 	try:
 		print("Received delete event.")
 
-		delete_response = client.delete_user_profile(
+		client.delete_user_profile(
 			DomainId = domain_id,
 			UserProfileName = user_profile_name
 		)

@@ -33,7 +33,8 @@ def create_resource(event, context):
 			VpcId = event["ResourceProperties"]["VpcId"],
 			DefaultUserSettings = {
 				"ExecutionRole": event["ResourceProperties"]["DefaultExecutionRole"]
-			}
+			},
+			# AppNetworkAccessType = "VpcOnly",
 		)
 		domain_id = sm_domain["DomainArn"].split("/")[1]
 		domain_status = sm.describe_domain(DomainId = domain_id)["Status"]
@@ -83,7 +84,7 @@ def delete_resource(event, context):
 			return
 		else:
 			domain_id = domains[0]["DomainId"]
-			delete_response = sm.delete_domain( DomainId = domain_id, RetentionPolicy={ 'HomeEfsFileSystem': 'Delete'} )
+			sm.delete_domain( DomainId = domain_id, RetentionPolicy={ 'HomeEfsFileSystem': 'Delete'} )
 
 		print("Checking Delete status.")
 		domain_status = sm.describe_domain(DomainId = domain_id)["Status"]

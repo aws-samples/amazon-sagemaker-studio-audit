@@ -22,12 +22,15 @@ setuptools.setup(
     packages=setuptools.find_packages(where="sagemaker_studio_audit_control"),
 
     install_requires=[
-        "aws-cdk.core==1.71.0",
+        "aws-cdk.core==1.90.0",
         "aws-cdk.aws-iam",
         "aws-cdk.aws_lakeformation",
         "aws-cdk.aws_glue",
         "aws-cdk.aws_s3",
-        "aws-cdk.aws_lambda"
+        "aws-cdk.aws_lambda",
+        "aws-cdk.aws_secretsmanager",
+		"aws-cdk.aws_sagemaker",
+        "aws-cdk.aws_sso"
     ],
 
     python_requires=">=3.6",

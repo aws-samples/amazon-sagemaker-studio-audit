@@ -11,9 +11,9 @@ In this section, you complete the following high-level steps:
 1. Create an IAM group named `DataScientists` containing two users: `data-scientist-full` and `data-scientist-limited`, to control their access to the console and to Studio.
 2. Create a managed policy named `DataScientistGroupPolicy` and assign it to the group.
 
-The policy allows users in the group to access Studio, but only using a SageMaker user profile that matches their IAM user name. It also denies the use of SageMaker notebook instances, allowing Studio notebooks only.
+The policy uses [attribute-based access control](https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_attribute-based-access-control.html) (ABAC) to limit Studio access to the respective users, following the recommendations described in [Configuring Amazon SageMaker Studio for teams and groups with complete resource isolation](https://aws.amazon.com/blogs/machine-learning/configuring-amazon-sagemaker-studio-for-teams-and-groups-with-complete-resource-isolation/). It also denies the use of SageMaker notebook instances, allowing Studio notebooks only.
 
-3. For each IAM user, create individual IAM roles, which are used as user profile execution roles in Studio later.
+1. For each IAM user, create individual IAM roles, which are used as user profile execution roles in Studio later.
 
 The naming convention for these roles consists of a common prefix followed by the corresponding IAM user name. This allows you to audit activities on Studio notebooks—which are logged using Studio’s execution roles—and trace them back to the individual IAM users who performed the activities. For this post, I use the prefix `SageMakerStudioExecutionRole_`.
 
@@ -87,7 +87,7 @@ To create your group and users, complete the following steps:
         }
         </pre>
 
-This policy forces an IAM user to open Studio using a SageMaker user profile with the same name. It also denies the use of SageMaker notebook instances, allowing Studio notebooks only.
+The policy uses ABAC to limit Studio access to the respective users. It also denies the use of SageMaker notebook instances, allowing Studio notebooks only.
 
 1. [Create an IAM group](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_groups_create.html).
     - For **Group name**, enter `DataScientists`.

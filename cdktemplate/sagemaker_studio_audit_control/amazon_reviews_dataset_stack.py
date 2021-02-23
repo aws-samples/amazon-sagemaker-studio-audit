@@ -108,7 +108,7 @@ class AmazonReviewsDatasetStack(core.Stack):
 			"Pet_Products", "Shoes", "Software", "Sports", "Tools", "Toys", "Video", "Video_DVD", "Video_Games", 
 			"Watches", "Wireless"]
 
-		partition_uri_prefix = "{}/parquet/{}".format(amazon_reviews_bucket.s3_url_for_object(), amazon_reviews_table.table_input.partition_keys[0].name)
+		partition_uri_prefix = f"{amazon_reviews_bucket.s3_url_for_object()}/parquet/{amazon_reviews_table.table_input.partition_keys[0].name}"
 
 		for partition in partition_list:
 
