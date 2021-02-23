@@ -2,7 +2,7 @@
 
 You now test the implemented Lake Formation access control policies by opening Studio using both user profiles. For each user profile, you run the same Studio notebook containing Athena queries. You should see different query outputs for each user profile, matching the data permissions implemented earlier.
 
-1. Sign in to the console with IAM user `data-scientist-full`.
+1. Sign in to the console with the credentials associated to the first data scientist (`data-scientist-full`), based on your authentication method (AWS IAM, AWS SSO, or federation with an external IdP). 
 2. On the SageMaker console, in the navigation pane, choose **Amazon SageMaker Studio**.
 3. On the **Studio Control Panel**, choose user name `data-scientist-full`.
 4. Choose **Open Studio**.
@@ -13,7 +13,9 @@ Due to the IAM policies attached to the IAM user, you can only open Studio with 
 6. In Studio, on the top menu, under **File**, under **New**, choose **Terminal**.
 7. At the command prompt, run the following command to import a sample notebook to test Lake Formation data permissions: 
 
-	`git clone https://github.com/aws-samples/amazon-sagemaker-studio-audit.git`
+	<code>
+	git clone https://github.com/aws-samples/amazon-sagemaker-studio-audit.git
+	</code>
 
 8. In the left sidebar, choose the file browser icon.
 9. Navigate to `amazon-sagemaker-studio-audit`.
@@ -39,7 +41,7 @@ After running the last `SELECT` query, because the user has full SELECT permissi
 17. On the top menu, under **File**, choose **Shut Down**.
 18. Choose **Shutdown All** to shut down all the Studio apps.
 19. Close the Studio browser tab.
-20. Repeat the previous steps in this section, this time signing in as the user `data-scientist-limited` and opening Studio with this user.
+20. 20.	Repeat the previous steps in this section, this time signing in with the credentials associated to the second data scientist (`data-scientist-limited`) and opening Studio with this user. 
 21. Don’t run the code cell in the section **Create S3 bucket for query output files**.
 
 For this user, after running the same `SELECT` query in the Studio notebook, the query output only includes a subset of columns for the `amazon_reviews_parquet` table.

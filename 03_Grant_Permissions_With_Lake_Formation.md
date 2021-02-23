@@ -2,7 +2,7 @@
 
 Before data scientists are able to work on a Studio notebook, you grant the individual execution roles created in the previous section access to the Amazon Customer Reviews Dataset (or your own dataset). For this post, we implement different data permission policies for each data scientist to demonstrate how to grant granular access using Lake Formation.
 
-1. Sign in to the console with the IAM user configured as Lake Formation Admin.
+1. Sign in to the console with the credentials associated to a [Lake Formation administrator](https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html#terminology-admin), based on your authentication method (AWS IAM, AWS SSO, or federation with an external IdP).
 2. On the Lake Formation console, in the navigation pane, choose **Tables**.
 3. On the **Tables** page, select the table you created earlier, such as `amazon_reviews_parquet`.
 4. On the **Actions** menu, under **Permissions**, choose **Grant**.

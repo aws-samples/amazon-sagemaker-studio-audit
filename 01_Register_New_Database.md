@@ -4,7 +4,7 @@ I use the [Amazon Customer Reviews Dataset](https://s3.amazonaws.com/amazon-revi
 
 To register the Amazon Customer Reviews Dataset in Lake Formation, complete the following steps:
 
-1. Sign in to the console with the IAM user configured as Lake Formation Admin.
+1. Sign in to the console with the credentials associated to a [Lake Formation administrator](https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html#terminology-admin), based on your authentication method (AWS IAM, AWS SSO, or federation with an external IdP).
 2. On the Lake Formation console, in the navigation pane, under **Data catalog**, choose **Databases**.
 3. Choose **Create Database**.
 4. In **Database details**, select **Database** to create the database in your own account.

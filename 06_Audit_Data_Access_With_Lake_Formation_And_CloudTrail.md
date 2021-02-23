@@ -9,7 +9,7 @@ Alternatively, instead of filtering individual events in Lake Formation and Clou
 To review activity in Lake Formation, complete the following steps:
 
 1. Sign out of the AWS account.
-2. Sign in to the console with the IAM user configured as Lake Formation Admin.
+2. Sign in to the console with the credentials associated to a [Lake Formation administrator](https://docs.aws.amazon.com/lake-formation/latest/dg/how-it-works.html#terminology-admin), based on your authentication method (AWS IAM, AWS SSO, or federation with an external IdP).
 3. On the Lake Formation console, in the navigation pane, choose **Dashboard**.
 
 Under **Recent access activity**, you can find the events associated to the data access for both users.
