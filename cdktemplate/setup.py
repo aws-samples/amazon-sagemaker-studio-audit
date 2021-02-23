@@ -27,9 +27,8 @@ setuptools.setup(
         "aws-cdk.aws_lakeformation",
         "aws-cdk.aws_glue",
         "aws-cdk.aws_s3",
-        "aws-cdk.aws_lambda",
         "aws-cdk.aws_secretsmanager",
-		"aws-cdk.aws_sagemaker",
+		# "aws-cdk.aws_sagemaker",
         "aws-cdk.aws_sso"
     ],
 

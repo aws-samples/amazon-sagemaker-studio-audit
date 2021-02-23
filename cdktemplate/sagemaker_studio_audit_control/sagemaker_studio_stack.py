@@ -3,7 +3,7 @@
 
 from aws_cdk import ( 
 	aws_iam as iam,
-	aws_lambda as _lambda,
+	# aws_lambda as _lambda,
 	# aws_sagemaker as sm,
 	core
 )
